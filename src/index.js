@@ -5,7 +5,6 @@ import { getGallery, totalPages } from './js/api';
 import { scroll } from './js/scroll';
 import { createGalleryItem } from './js/createMarkup';
 
-
 const form = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
 const guard = document.querySelector('.guard');
@@ -27,6 +26,7 @@ async function addGallerySubmit() {
   try {
     const response = await getGallery(query, page);
     addImages(response);
+
     if (page !== totalPages) {
       observer.observe(guard);
     }
@@ -43,7 +43,7 @@ async function addGalleryPag() {
     createGalleryItem(images);
     lightbox.refresh();
 
-    if (page > totalPages) {   
+    if (page > totalPages) {
       Notiflix.Notify.warning(
         "We're sorry, but you've reached the end of search results."
       );
@@ -83,6 +83,7 @@ function addImages(response) {
     Notiflix.Notify.success(
       `Hooray! We found ${response.data.totalHits} images.`
     );
+
     lightbox.refresh();
   }
 }
@@ -90,6 +91,7 @@ function addImages(response) {
 function onPagination(entries, observer) {
   entries.forEach(entry => {
     console.log(entry);
+
     if (entry.isIntersecting) {
       page += 1;
       addGalleryPag();

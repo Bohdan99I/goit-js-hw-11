@@ -12,6 +12,7 @@ function createGalleryItem(images) {
         comments,
         downloads,
       } = image;
+      
       return `<a class="gallery__item" target="_self" href="${largeImageURL}">
               <div class="img-container">
                   <img class="gallery__image" src="${webformatURL}" alt="${tags}" loading="lazy"/>

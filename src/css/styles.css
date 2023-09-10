@@ -63,13 +63,16 @@ img {
 .btn-search:hover {
   cursor: pointer;
 }
+
 .search-input:focus,
 .btn-search:focus {
   border: 1px solid #4a4a4a;
 }
+
 .gallery-section {
   margin-top: 50px;
 }
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -127,6 +130,7 @@ img {
   text-align: center;
   font-size: 12px;
 }
+
 .btn-container {
   text-align: center;
 }

@@ -1,6 +1,6 @@
 import { gallery } from '../index';
 
-function scrollPage() {
+function scroll() {
   if (!gallery) {
     return;
   }
@@ -20,4 +20,4 @@ function scrollPage() {
   });
 }
 
-export { scrollPage };
+export { scroll };

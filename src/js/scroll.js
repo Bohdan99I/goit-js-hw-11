@@ -1,17 +1,23 @@
 import { gallery } from '../index';
 
-function scroll() {
-  if (!gallery.firstElementChild) {
+function scrollPage() {
+  if (!gallery) {
     return;
-  } else {
-    const { height: cardHeight } =
-      gallery.firstElementChild.getBoundingClientRect();
-
-    window.scrollBy({
-      top: cardHeight * 2,
-      behavior: 'smooth',
-    });
   }
+
+  const firstGalleryElement = gallery.firstElementChild;
+
+  if (!firstGalleryElement) {
+    return;
+  }
+
+  const { height: firstElementHeight } =
+    firstGalleryElement.getBoundingClientRect();
+
+  window.scrollBy({
+    top: firstElementHeight * 2,
+    behavior: 'smooth',
+  });
 }
 
-export { scroll };
+export { scrollPage };

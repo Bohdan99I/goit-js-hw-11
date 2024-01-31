@@ -31,15 +31,17 @@ async function addGallerySubmit() {
       observer.observe(guard);
     }
   } catch (error) {
-    console.error(error);
+      console.error("Error loading gallery:", error);
   }
 }
 
 async function addGalleryPag() {
   try {
     scroll();
+
     const response = await getGallery(query, page);
     const images = response.data.hits;
+
     createGalleryItem(images);
     lightbox.refresh();
 
@@ -49,7 +51,7 @@ async function addGalleryPag() {
       );
     }
   } catch (error) {
-    console.error(error);
+   console.error('Error loading gallery:', error);
   }
 }
 
